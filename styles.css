@@ -1,29 +1,195 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://storage.ko-fi.com/cdn/useruploads/display/be36694a-8e9b-4317-a0bc-cb4b6acd2058_untitleddesign.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto;
+    flex-direction: column;
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    background-color: rgba(255, 255, 255, 0.8);
+    animation: fadeIn 2s ease-in-out;
+    margin: auto;
+}
+
+/* Info container styles */
+.info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Info block styles */
+.info-block {
+    padding: 10px;
+    border: 2px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin: auto;
+}
+
+/* Hover effect for info block */
+.info-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Header styles for info block */
+.info-block h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #444;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+    animation: slideIn 1s ease-out;
+}
+
+/* Paragraph styles for info block */
+.info-block p {
+    margin: 8px 0;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Strong text styles */
+.info-block strong {
+    color: #555;
+}
+
+/* Info block border and header color */
+.info-block {
+    border-color: #e1004f;
+}
+
+.info-block h2 {
+    color: #e1004f;
+}
+
+/* Image container styles */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 150px;
+}
+
+/* Profile image styles */
+.image-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 8px;
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Name text styles */
+.name {
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #e1004f;
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Favorite block styles */
+.favorite-block {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    animation: slideInFromLeft 2s ease-in-out;
+}
+
+/* Header styles for favorite block */
+.favorite-block h2 {
+    color: #e1004f;
+    margin-top: 0;
+}
+
+/* Paragraph styles for favorite block */
+.favorite-block p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
     .container {
-        padding: 10px;
+        flex-direction: column;
+        align-items: center;
     }
-    .image-container img {
-        width: 80px; /* Reduce the size of the profile picture */
-        height: 80px;
-    }
-    .name {
-        font-size: 0.7em; /* Make the name text smaller */
-    }
+
     .info-block {
-        padding: 8px;
-        font-size: 0.8em; /* Reduce the font size in infoboxes */
+        max-width: 90%;
     }
-    .info-block h2 {
-        font-size: 1.1em; /* Smaller headers in infoboxes */
+
+    .image-container img {
+        width: 100px;
+        height: 100px;
     }
-    .info-block p {
-        font-size: 0.8em; /* Smaller paragraph text in infoboxes */
+
+    .name {
+        font-size: 0.8em;
     }
-    .favorite-cartoon {
-        font-size: 0.7em; /* Make the favorite cartoon text smaller */
-        margin-top: 10px; /* Add some margin to separate it from other content */
+
+    .favorite-block {
+        max-width: 90%;
     }
 }
+
 
 
 
