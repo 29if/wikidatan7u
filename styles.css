@@ -1,192 +1,28 @@
-/* Base Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('https://storage.ko-fi.com/cdn/useruploads/display/be36694a-8e9b-4317-a0bc-cb4b6acd2058_untitleddesign.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: auto;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1000px; /* Reduced max-width */
-    width: 100%;
-    padding: 15px; /* Reduced padding */
-    border-radius: 12px; /* Slightly smaller border-radius */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Slightly smaller shadow */
-    background-color: rgba(255, 255, 255, 0.8);
-    animation: fadeIn 2s ease-in-out;
-    margin: auto;
-}
-
-.info-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Reduced gap */
-}
-
-.info-block {
-    padding: 10px; /* Smaller padding */
-    border: 2px solid #ddd;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px; /* Slightly smaller border-radius */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-size: 0.9em; /* Smaller font size */
-}
-
-.info-block:hover {
-    transform: scale(1.03); /* Slightly smaller scale */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-
-.info-block h2 {
-    margin-top: 0;
-    font-size: 1.2em; /* Smaller heading size */
-    color: #444;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 8px; /* Reduced padding */
-    animation: slideIn 1s ease-out;
-}
-
-.info-block p {
-    margin: 8px 0; /* Reduced margin */
-    font-size: 0.9em; /* Smaller text size */
-}
-
-.info-block strong {
-    color: #555;
-}
-
-.image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 0 0 150px; /* Smaller flex basis */
-    margin-bottom: 15px; /* Reduced margin */
-}
-
-.image-container img {
-    width: 120px; /* Smaller image size */
-    height: 120px; /* Maintain aspect ratio */
-    border-radius: 50%;
-    border: 2px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin-bottom: 8px; /* Reduced margin */
-    animation: fadeInUp 2s ease-out;
-}
-
-.name {
-    text-align: center;
-    font-size: 0.9em; /* Smaller font size */
-    font-weight: bold;
-    color: #e1004f;
-    animation: fadeInUp 2s ease-out;
-}
-
-/* Specific Styles for Favorite Cartoon Info */
-.favorite-cartoon {
-    width: 90%; /* Adjust width to be smaller */
-    padding: 8px; /* Adjust padding */
-    margin: 10px auto; /* Center and space */
-    font-size: 0.8em; /* Smaller font size */
-    text-align: center;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 1024px) {
-    .container {
-        padding: 12px; /* Reduced padding */
-    }
-
-    .info-container {
-        flex-direction: column;
-        gap: 12px; /* Reduced gap */
-    }
-
-    .info-block {
-        width: 85%; /* Adjust width */
-        padding: 8px; /* Smaller padding */
-        font-size: 0.8em; /* Smaller font size */
-    }
-
-    .info-block h2 {
-        font-size: 1.1em; /* Smaller heading size */
-    }
-
-    .info-block p {
-        font-size: 0.7em; /* Smaller text size */
-    }
-}
-
 @media (max-width: 768px) {
     .container {
-        padding: 8px; /* Reduced padding */
+        padding: 10px;
     }
-
-    .image-container {
-        max-width: 100px; /* Smaller image size */
+    .image-container img {
+        width: 100px; /* Reduce the size of the profile picture */
+        height: 100px;
     }
-
-    .info-container {
-        flex-direction: column;
-        align-items: center; /* Center the info-container items */
+    .name {
+        font-size: 0.8em; /* Make the name text smaller */
     }
-
     .info-block {
-        width: 90%; /* Adjust width */
-        padding: 6px; /* Smaller padding */
-        font-size: 0.7em; /* Smaller font size */
+        padding: 10px;
+        font-size: 0.9em; /* Reduce the font size in infoboxes */
     }
-
     .info-block h2 {
-        font-size: 1em; /* Smaller heading size */
+        font-size: 1.2em; /* Smaller headers in infoboxes */
     }
-
     .info-block p {
-        font-size: 0.6em; /* Smaller text size */
+        font-size: 0.9em; /* Smaller paragraph text in infoboxes */
+    }
+    .favorite-cartoon {
+        font-size: 0.8em; /* Make the favorite cartoon text smaller */
     }
 }
-
-@media (max-width: 480px) {
-    .container {
-        padding: 5px; /* Reduced padding */
-    }
-
-    .image-container {
-        max-width: 80px; /* Smaller image size */
-    }
-
-    .info-container {
-        flex-direction: column;
-        align-items: center; /* Center the info-container items */
-    }
-
-    .info-block {
-        width: 95%; /* Increase width for very small screens */
-        padding: 4px; /* Smaller padding */
-        font-size: 0.6em; /* Smaller font size */
-    }
-
-    .info-block h2 {
-        font-size: 0.9em; /* Smaller heading size */
-    }
-
-    .info-block p {
-        font-size: 0.5em; /* Smaller text size */
-    }
-}
-
-
 
 
 /* styles.css */
