@@ -18,26 +18,26 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: auto; /* Allow scrolling */
+            overflow: auto;
         }
         .container {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center;
             max-width: 1200px;
             width: 100%;
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-            background-color: rgba(255, 255, 255, 0.8); /* Improved visual appeal */
+            background-color: rgba(255, 255, 255, 0.8);
             animation: fadeIn 2s ease-in-out;
             margin: auto;
         }
         .info-container {
-            flex: 1;
             display: flex;
             flex-direction: column;
             gap: 20px;
+            width: 100%;
         }
         .info-block {
             padding: 15px;
@@ -69,61 +69,90 @@
         .info-block strong {
             color: #555;
         }
-        /* Colors inspired by Darling in the Franxx */
         .info-block {
-            border-color: #e1004f; /* Red, thematic color */
+            border-color: #e1004f;
         }
         .info-block h2 {
-            color: #e1004f; /* Red, thematic color */
+            color: #e1004f;
         }
         .image-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             flex: 0 0 200px;
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 20px;
         }
         .image-container img {
-            width: 150px; /* Adjusted size for image */
-            height: 150px; /* Ensure image is square */
-            border-radius: 50%; /* Round image */
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
             border: 2px solid #ddd;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            margin-bottom: 10px;
-            animation: fadeInUp 2s ease-out; /* Subtle animation */
+            animation: fadeInUp 2s ease-out;
         }
         .name {
             text-align: center;
-            font-size: 1em; /* Smaller size for name */
+            font-size: 1em;
             font-weight: bold;
-            color: #e1004f; /* Red, thematic color */
+            color: #e1004f;
             animation: fadeInUp 2s ease-out;
         }
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         @keyframes slideIn {
-            from {
-                transform: translateX(-20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
         @keyframes fadeInUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @media (max-width: 1024px) {
+            .info-container {
+                flex-direction: column;
+                gap: 15px;
             }
-            to {
-                transform: translateY(0);
-                opacity: 1;
+            .info-block {
+                width: 100%;
+                padding: 10px;
+            }
+            .info-block h2 {
+                font-size: 1.3em;
+            }
+            .info-block p {
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .image-container {
+                max-width: 150px;
+            }
+            .info-block h2 {
+                font-size: 1.2em;
+            }
+            .info-block p {
+                font-size: 0.9em;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 5px;
+            }
+            .image-container {
+                max-width: 120px;
+            }
+            .info-block h2 {
+                font-size: 1.1em;
+            }
+            .info-block p {
+                font-size: 0.8em;
             }
         }
     </style>
