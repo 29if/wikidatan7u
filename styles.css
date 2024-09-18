@@ -3,27 +3,28 @@
         padding: 10px;
     }
     .image-container img {
-        width: 100px; /* Reduce the size of the profile picture */
-        height: 100px;
+        width: 80px; /* Reduce the size of the profile picture */
+        height: 80px;
     }
     .name {
-        font-size: 0.8em; /* Make the name text smaller */
+        font-size: 0.7em; /* Make the name text smaller */
     }
     .info-block {
-        padding: 10px;
-        font-size: 0.9em; /* Reduce the font size in infoboxes */
+        padding: 8px;
+        font-size: 0.8em; /* Reduce the font size in infoboxes */
     }
     .info-block h2 {
-        font-size: 1.2em; /* Smaller headers in infoboxes */
+        font-size: 1.1em; /* Smaller headers in infoboxes */
     }
     .info-block p {
-        font-size: 0.9em; /* Smaller paragraph text in infoboxes */
+        font-size: 0.8em; /* Smaller paragraph text in infoboxes */
     }
     .favorite-cartoon {
-        font-size: 0.8em; /* Make the favorite cartoon text smaller */
+        font-size: 0.7em; /* Make the favorite cartoon text smaller */
         margin-top: 10px; /* Add some margin to separate it from other content */
     }
 }
+
 
 
 
