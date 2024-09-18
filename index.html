@@ -118,73 +118,6 @@
             font-size: 1.2em;
             color: #555;
         }
-        .comment-section {
-            margin-top: 30px;
-            padding: 20px;
-            border: 2px solid #ddd;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            width: 100%;
-            max-width: 600px;
-            text-align: center;
-        }
-        .comment-section h2 {
-            color: #e1004f;
-            margin-top: 0;
-        }
-        .comment-section form {
-            margin-bottom: 20px;
-        }
-        .comment-section input,
-        .comment-section textarea {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box;
-        }
-        .comment-section button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            background-color: #e1004f;
-            color: white;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .comment-section button:hover {
-            background-color: #c10040;
-        }
-        .comments-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        .comments-list li {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .comments-list li:last-child {
-            border-bottom: none;
-        }
-        .delete-button {
-            background-color: #e1004f;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9em;
-        }
-        .delete-button:hover {
-            background-color: #c10040;
-        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -201,18 +134,13 @@
             from { transform: translateX(-100%); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
         }
-        @keyframes bounceIn {
-            0% { opacity: 0; transform: scale(0.3); }
-            50% { opacity: 1; transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="image-container">
-            <img src="https://cntamv.weebly.com/uploads/1/5/0/2/150236641/662c0c32ddf_720x720.jpg" alt="Profile Image">
-            <div class="name">Nanalienu</div>
+            <img src="https://cntamv.weebly.com/uploads/1/5/0/2/150236641/662c0c32dddcfda3779c7a75-278024053-830889331200464-1731260194721176046-n-p-500-fotor-202407251204_orig.png" alt="Profile Picture">
+            <div class="name">Asaf Gabriel Nanalienu</div>
         </div>
         <div class="info-container">
             <div class="info-block">
@@ -252,72 +180,6 @@
         <h2>Favorite Cartoon</h2>
         <p>Jurassic World: Camp Cretaceous</p>
     </div>
-    <div class="comment-section">
-        <h2>Comments</h2>
-        <form id="commentForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <textarea id="comment" rows="4" placeholder="Your Comment" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-        <ul id="commentsList" class="comments-list">
-            <!-- Comments will be dynamically added here -->
-        </ul>
-        <p id="commentCount">Number of comments: 0</p>
-    </div>
-    <script>
-        // Function to load comments from local storage
-        function loadComments() {
-            const comments = JSON.parse(localStorage.getItem('comments')) || [];
-            const commentsList = document.getElementById('commentsList');
-            const commentCount = document.getElementById('commentCount');
-            
-            commentsList.innerHTML = '';
-            comments.forEach((comment, index) => {
-                const li = document.createElement('li');
-                li.innerHTML = `${comment.name}: ${comment.comment} <button class="delete-button" data-index="${index}">Delete</button>`;
-                commentsList.appendChild(li);
-            });
-            commentCount.textContent = `Number of comments: ${comments.length}`;
-        }
-
-        // Function to save comments to local storage
-        function saveComment(name, comment) {
-            const comments = JSON.parse(localStorage.getItem('comments')) || [];
-            comments.push({ name, comment });
-            localStorage.setItem('comments', JSON.stringify(comments));
-        }
-
-        // Function to delete a comment
-        function deleteComment(index) {
-            const comments = JSON.parse(localStorage.getItem('comments')) || [];
-            comments.splice(index, 1);
-            localStorage.setItem('comments', JSON.stringify(comments));
-            loadComments();
-        }
-
-        document.getElementById('commentForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const comment = document.getElementById('comment').value.trim();
-            if (name && comment) {
-                saveComment(name, comment);
-                loadComments();
-                document.getElementById('name').value = '';
-                document.getElementById('comment').value = '';
-            }
-        });
-
-        // Event delegation for delete buttons
-        document.getElementById('commentsList').addEventListener('click', function(event) {
-            if (event.target.classList.contains('delete-button')) {
-                const index = event.target.getAttribute('data-index');
-                deleteComment(index);
-            }
-        });
-
-        // Load comments on page load
-        window.onload = loadComments;
-    </script>
 </body>
 </html>
 <!DOCTYPE html>
