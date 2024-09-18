@@ -21,8 +21,10 @@
     }
     .favorite-cartoon {
         font-size: 0.8em; /* Make the favorite cartoon text smaller */
+        margin-top: 10px; /* Add some margin to separate it from other content */
     }
 }
+
 
 
 /* styles.css */
